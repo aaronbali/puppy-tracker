@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
     "server:dev": "nodemon --exec \"ts-node --prefer-ts-exts -P tsconfig.server.json\" src/server.ts",
     "client": "react-scripts start",
-    "build": "tsc && react-scripts build",
+    "build": "tsc -p tsconfig.server.json && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

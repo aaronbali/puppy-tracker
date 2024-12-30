@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import { PuppyEvent, IPuppyEvent } from './models/PuppyEvent';
+import { PuppyEvent, IPuppyEvent } from './models/PuppyEvent.js';
 
 interface PuppyEventBody extends Omit<IPuppyEvent, 'timestamp'> {
   timestamp: string; // Frontend sends ISO string
