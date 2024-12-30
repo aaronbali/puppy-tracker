@@ -24,4 +24,4 @@ const PuppyEventSchema = new mongoose.Schema<IPuppyEvent>({
   }
 });
 
-export const PuppyEvent = mongoose.model<IPuppyEvent>('PuppyEvent', PuppyEventSchema);
+export const PuppyEvent = mongoose.model<IPuppyEvent>('PuppyEvent', PuppyEventSchema, 'puppyevents');
