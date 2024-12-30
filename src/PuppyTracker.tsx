@@ -48,7 +48,7 @@ export const PuppyTracker = () => {
 
   const fetchEvents = async () => {
     try {
-      const response = await axios.get<PuppyEvent[]>('http://localhost:3001/api/events');
+      const response = await axios.get<PuppyEvent[]>('/api/events');
       setEvents(response.data);
     } catch (error) {
       console.error('Error fetching events:', error);
@@ -57,7 +57,7 @@ export const PuppyTracker = () => {
 
   const deleteEvent = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:3001/api/events/${id}`);
+      await axios.delete(`/api/events/${id}`);
       setEvents(prev => prev.filter(event => event.id !== id));
       setEventToDelete(null);
     } catch (error) {
@@ -78,7 +78,7 @@ export const PuppyTracker = () => {
     }
 
     try {
-      await axios.post('http://localhost:3001/api/events', newEvent);
+      await axios.post('/api/events', newEvent);
       setEvents(prev => [newEvent, ...prev]);
     } catch (error) {
       console.error('Error adding event:', error);
